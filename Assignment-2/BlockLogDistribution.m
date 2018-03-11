@@ -78,7 +78,7 @@ finalMatrix = [secondMatrix thirdMatrix]; #Combine the possible assignment of ta
 finalMatrix(:, ordering) = finalMatrix; #Ensure the final matrix is sorted by the order of variables in its collumn, make the index # be the corresponding variable.
 
 for i = 1:length(F),
-  LogBS = LogBS + log(GetValueOfAssignment(F(i), finalMatrix(:, F(i).var))); #Factor product over each factors using only the variable assignment over finalMatrix.
+  LogBS = LogBS + log(GetValueOfAssignment(F(i), finalMatrix(:, F(i).var))); #Factor product over all factors using the variable assignments over finalMatrix.
 end
 
 #The reason we need to do all these calculations, please refer to PPT 3.5.4 P5. 

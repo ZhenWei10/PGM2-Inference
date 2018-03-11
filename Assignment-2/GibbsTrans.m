@@ -22,6 +22,13 @@ for i = 1:length(G.names)
     % Also, note that randsample() requires arguments in raw probability space
     % be sure that the arguments you pass to it meet that criteria
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+#I will first create a easy version that ignore the stuff of MarkovBlanket.(may impossible to realize given the last function we created)
+    
+    Prob_unormalized = exp(BlockLogDistribution(i,G,F,A));
+    
+    Prob_normalized = Prob_unormalized/sum(Prob_unormalized);
+    
+    A(i) = randsample(1:length(Prob_normalized),1,true,Prob_normalized);
+    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 end
