@@ -20,6 +20,19 @@ p_acceptance = 0.0;
 % Compute acceptance probability
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+forward = 1.0;
+backward = 1.0;
+
+for i = 1:length(F),
+  forward = forward * GetValueOfAssignment(F(i), A_prop(F(i).var) ); #Pi(Proposed) 
+  backward = backward * GetValueOfAssignment(F(i), A(F(i).var) ); #Pi(Current)
+end
+
+#This is some how a chain rule toward the unormalized measure of joint probability, 
+#since their partition function always equal, here we ignore normalization by their division.
+
+p_acceptance = min(1,(forward / backward)); #likelihood of forward transision / likelihood of backward transision.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Accept or reject proposal
