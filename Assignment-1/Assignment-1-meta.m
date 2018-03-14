@@ -1,0 +1,1 @@
+cd "/Users/zhenwei/Desktop/PGM2-Inference/Assignment-1"addpath "/Users/zhenwei/Desktop/PGM2-Inference/Assignment-1"exampleIOPA5 = load('exampleIOPA5.mat');load("PA4Sample.mat", "NinePersonPedigree");#ComputeMarginal(1, NinePersonPedigree, []); #Too slow not run   

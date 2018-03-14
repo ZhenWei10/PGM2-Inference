@@ -29,9 +29,10 @@ for i = 1:length(F),
 end
 
 #This is some how a chain rule toward the unormalized measure of joint probability, 
-#since their partition function always equal, here we ignore normalization by their division.
 
-p_acceptance = min(1,(forward / backward)); #likelihood of forward transision / likelihood of backward transision.
+#since their partition functions are always equal, here we ignore normalization by their division.
+
+p_acceptance = min(1,(forward / backward)); #likelihood of forward under stationary / likelihood of backward under stationary.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
